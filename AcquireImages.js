@@ -533,7 +533,9 @@ function TSXSync()
     var wasguiding;
     wasGuiding = SUP.c_guiding;
     Console.PrintLine("  Re-slew to target.");
-    SUP.StartSlewJ2000(targetName, targetRA, targetDec);
+    SUP.c_slewTargetRA=targetRA;
+    SUP.c_slewTargetDec=targetDec;
+    SUP.StartSlewJ2000(targetName, SUP.c_slewTargetRA, SUP.c_slewTargetDec);
     SUP.WaitForSlew();
     if(wasGuiding)
     {
