@@ -530,7 +530,15 @@ function TSXSync()
         Util.WaitForMilliseconds(5000);
     }
     //Recenter Process
-    SUP.RecenterTarget(targetName, targetRA, targetDec);
+    var wasguiding;
+    wasGuiding = SUP.c_guiding;
+    Console.PrintLine("  Re-slew to target.");
+    SUP.StartSlewJ2000(targetName, targetRA, targetDec);
+    SUP.WaitForSlew();
+    if(wasGuiding)
+    {
+	SUP.AutoGuide = true;
+    }
     TSX_IL_Succeeded = true;
 }
 function alert()
