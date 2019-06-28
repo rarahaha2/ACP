@@ -351,7 +351,7 @@ var OBS_Time;
 var currentpath;
 var Image_Name;
 var Bin_Mode = 2; //设置bin方式
-var Expose_Time = 20; //设置曝光时间
+var Expose_Time = 5; //设置曝光时间
 var Filter_num = 0;//滤镜号,0是第1个
 var Object_Name = "Target"; //目标名称
 var RA_J2K, Dec_J2K;
